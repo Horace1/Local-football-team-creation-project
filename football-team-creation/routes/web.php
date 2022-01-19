@@ -30,7 +30,7 @@ Route::middleware(['auth'])->group(function (){
 
     // Team
     Route::post('save-team', 'App\Http\Controllers\TeamsController@store')->name('save-team');
-    Route::put('update-team', 'App\Http\Controllers\TeamsController@update')->name('update-team');
+    Route::put('update-team/{id}', 'App\Http\Controllers\TeamsController@update')->name('update-team');
     Route::get('view-teams', 'App\Http\Controllers\TeamsController@index')->name('view-teams');
     Route::get('delete-team/{id}', 'App\Http\Controllers\TeamsController@destroy')->name('delete-team');
     Route::get('edit-team/{id}', 'App\Http\Controllers\TeamsController@edit')->name('edit-team');
@@ -38,7 +38,7 @@ Route::middleware(['auth'])->group(function (){
 
     // Player
     Route::post('save-player', 'App\Http\Controllers\PlayersController@store')->name('save-player');
-    Route::put('update-player', 'App\Http\Controllers\PlayersController@update')->name('update-player');   
+    Route::put('update-player/{id}', 'App\Http\Controllers\PlayersController@update')->name('update-player');   
     Route::get('view-players/{id}', 'App\Http\Controllers\PlayersController@index')->name('view-players');
     Route::get('delete-player/{id}', 'App\Http\Controllers\PlayersController@destroy')->name('delete-player');
     Route::get('edit-player/{id}', 'App\Http\Controllers\PlayersController@edit')->name('edit-player');

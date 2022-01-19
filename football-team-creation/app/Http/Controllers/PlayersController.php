@@ -113,10 +113,10 @@ class PlayersController extends Controller
         ]);
     
     
-        Team::where('id', $id)
-        ->update(['team_name' => $request->input('team_name'),
-                 'area'=>$request->input('area'),
-                 'home_pitch'=>$request->input('home_pitch')]
+        Player::where('id', $id)
+        ->update(['player_name' => $request->input('player_name'),
+                 'position'=>$request->input('position'),
+                 'team'=>$request->input('team')]
                 );
     
         return back()->with('success', 'sent');
@@ -135,10 +135,8 @@ class PlayersController extends Controller
 
         $players->delete();
 
-        return redirect('view-teams');
+
+        return redirect('view-players');
     }
 
-    public function updatePlayers(){
-        
-    }
 }

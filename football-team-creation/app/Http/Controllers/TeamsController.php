@@ -87,6 +87,9 @@ class TeamsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        // return $request->all();
+
         $this->validate($request, [
             'team_name' => 'required',
             'area' => 'required',
